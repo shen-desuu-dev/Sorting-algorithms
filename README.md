@@ -5,11 +5,11 @@
 
 # CREATED BY STEPHEN RAPHAEL L. GARCIA
 > Group members
-> Garcia, Stephen Raphael,
-> Aquino, Samiel Mathew,
-> Manzano, Joshua,
-> Guiller, Rabbon,
-> Cambay, Christian Dave,
+- Garcia, Stephen Raphael,
+- Aquino, Samiel Mathew,
+- Manzano, Joshua,
+- Guiller, Rabbon,
+- Cambay, Christian Dave,
   
 
 # Instructions
