@@ -1,14 +1,15 @@
 # SORTING ALGORITHMS
 
-# > [!NOTE]
+# NOTE
 > Amin nga code idtoy nga project ket inaramid ko idin in-update ko lang gamin adda ti performance issues, outdated ken unused nga packages na.
 
-## SOLEY CREATED BY STEPHEN RAPHAEL L. GARCIA
+# CREATED BY STEPHEN RAPHAEL L. GARCIA
 
 # Instructions
-> Enable python environment
-````
+>Enable python environment
+
 **Windows:**
+
 ```bash
 ./Environments/bin/activate.ps1
 ```
