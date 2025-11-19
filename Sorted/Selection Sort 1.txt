@@ -1,0 +1,10 @@
+Start: ['N', 'I', 'G', 'G', 'E', 'R']
+Swap N and R
+Array: ['R', 'I', 'G', 'G', 'E', 'N']
+Swap I and N
+Array: ['R', 'N', 'G', 'G', 'E', 'I']
+Swap G and I
+Array: ['R', 'N', 'I', 'G', 'E', 'G']
+Swap E and G
+Array: ['R', 'N', 'I', 'G', 'G', 'E']
+Finished: ['R', 'N', 'I', 'G', 'G', 'E']
