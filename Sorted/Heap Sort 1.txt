@@ -1,0 +1,854 @@
+--- HEAP SORT START ---
+Initial array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+Compare parent 10 with LEFT child 20
+Compare parent 9 with LEFT child 18
+Compare parent 9 with RIGHT child 19
+Compare parent 8 with LEFT child 16
+Compare parent 8 with RIGHT child 17
+Compare parent 7 with LEFT child 14
+Compare parent 7 with RIGHT child 15
+Compare parent 6 with LEFT child 12
+Compare parent 6 with RIGHT child 13
+Compare parent 5 with LEFT child 10
+Compare parent 5 with RIGHT child 11
+Compare parent 4 with LEFT child 8
+Compare parent 4 with RIGHT child 9
+Compare parent 3 with LEFT child 6
+Compare parent 3 with RIGHT child 7
+Compare parent 2 with LEFT child 4
+Compare parent 2 with RIGHT child 5
+Compare parent 1 with LEFT child 2
+Compare parent 1 with RIGHT child 3
+Extract max: swap 1 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            2                         3             
+           / \                       / \            
+       4               5               6               7        
+      / \             / \             / \             / \       
+   8       9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      16           17           18           19           1      
+
+Compare parent 20 with LEFT child 2
+Compare parent 2 with RIGHT child 3
+Swap nodes 20 and 2
+Tree after swap:
+                   2                    
+                  / \                   
+            20                        3             
+           / \                       / \            
+       4               5               6               7        
+      / \             / \             / \             / \       
+   8       9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      16           17           18           19           1      
+
+Compare parent 20 with LEFT child 4
+Compare parent 4 with RIGHT child 5
+Swap nodes 20 and 4
+Tree after swap:
+                   2                    
+                  / \                   
+            4                         3             
+           / \                       / \            
+       20              5               6               7        
+      / \             / \             / \             / \       
+   8       9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      16           17           18           19           1      
+
+Compare parent 20 with LEFT child 8
+Compare parent 8 with RIGHT child 9
+Swap nodes 20 and 8
+Tree after swap:
+                   2                    
+                  / \                   
+            4                         3             
+           / \                       / \            
+       8               5               6               7        
+      / \             / \             / \             / \       
+   20      9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      16           17           18           19           1      
+
+Compare parent 20 with LEFT child 16
+Compare parent 16 with RIGHT child 17
+Swap nodes 20 and 16
+Tree after swap:
+                   2                    
+                  / \                   
+            4                         3             
+           / \                       / \            
+       8               5               6               7        
+      / \             / \             / \             / \       
+   16      9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           18           19           1      
+
+Extract max: swap 2 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            4                         3             
+           / \                       / \            
+       8               5               6               7        
+      / \             / \             / \             / \       
+   16      9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           18           2            1      
+
+Compare parent 19 with LEFT child 4
+Compare parent 4 with RIGHT child 3
+Swap nodes 19 and 3
+Tree after swap:
+                   3                    
+                  / \                   
+            4                         19            
+           / \                       / \            
+       8               5               6               7        
+      / \             / \             / \             / \       
+   16      9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           18           2            1      
+
+Compare parent 19 with LEFT child 6
+Compare parent 6 with RIGHT child 7
+Swap nodes 19 and 6
+Tree after swap:
+                   3                    
+                  / \                   
+            4                         6             
+           / \                       / \            
+       8               5               19              7        
+      / \             / \             / \             / \       
+   16      9       10      11      12      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           18           2            1      
+
+Compare parent 19 with LEFT child 12
+Compare parent 12 with RIGHT child 13
+Swap nodes 19 and 12
+Tree after swap:
+                   3                    
+                  / \                   
+            4                         6             
+           / \                       / \            
+       8               5               12              7        
+      / \             / \             / \             / \       
+   16      9       10      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           18           2            1      
+
+Extract max: swap 3 with 18
+Tree after extraction:
+                   18                   
+                  / \                   
+            4                         6             
+           / \                       / \            
+       8               5               12              7        
+      / \             / \             / \             / \       
+   16      9       10      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           3            2            1      
+
+Compare parent 18 with LEFT child 4
+Compare parent 4 with RIGHT child 6
+Swap nodes 18 and 4
+Tree after swap:
+                   4                    
+                  / \                   
+            18                        6             
+           / \                       / \            
+       8               5               12              7        
+      / \             / \             / \             / \       
+   16      9       10      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           3            2            1      
+
+Compare parent 18 with LEFT child 8
+Compare parent 8 with RIGHT child 5
+Swap nodes 18 and 5
+Tree after swap:
+                   4                    
+                  / \                   
+            5                         6             
+           / \                       / \            
+       8               18              12              7        
+      / \             / \             / \             / \       
+   16      9       10      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           3            2            1      
+
+Compare parent 18 with LEFT child 10
+Compare parent 10 with RIGHT child 11
+Swap nodes 18 and 10
+Tree after swap:
+                   4                    
+                  / \                   
+            5                         6             
+           / \                       / \            
+       8               10              12              7        
+      / \             / \             / \             / \       
+   16      9       18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           17           3            2            1      
+
+Extract max: swap 4 with 17
+Tree after extraction:
+                   17                   
+                  / \                   
+            5                         6             
+           / \                       / \            
+       8               10              12              7        
+      / \             / \             / \             / \       
+   16      9       18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           4            3            2            1      
+
+Compare parent 17 with LEFT child 5
+Compare parent 5 with RIGHT child 6
+Swap nodes 17 and 5
+Tree after swap:
+                   5                    
+                  / \                   
+            17                        6             
+           / \                       / \            
+       8               10              12              7        
+      / \             / \             / \             / \       
+   16      9       18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           4            3            2            1      
+
+Compare parent 17 with LEFT child 8
+Compare parent 8 with RIGHT child 10
+Swap nodes 17 and 8
+Tree after swap:
+                   5                    
+                  / \                   
+            8                         6             
+           / \                       / \            
+       17              10              12              7        
+      / \             / \             / \             / \       
+   16      9       18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           4            3            2            1      
+
+Compare parent 17 with LEFT child 16
+Compare parent 16 with RIGHT child 9
+Swap nodes 17 and 9
+Tree after swap:
+                   5                    
+                  / \                   
+            8                         6             
+           / \                       / \            
+       9               10              12              7        
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      20           4            3            2            1      
+
+Extract max: swap 5 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            8                         6             
+           / \                       / \            
+       9               10              12              7        
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 8
+Compare parent 8 with RIGHT child 6
+Swap nodes 20 and 6
+Tree after swap:
+                   6                    
+                  / \                   
+            8                         20            
+           / \                       / \            
+       9               10              12              7        
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 12
+Compare parent 12 with RIGHT child 7
+Swap nodes 20 and 7
+Tree after swap:
+                   6                    
+                  / \                   
+            8                         7             
+           / \                       / \            
+       9               10              12              20       
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      14      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 14
+Compare parent 14 with RIGHT child 15
+Swap nodes 20 and 14
+Tree after swap:
+                   6                    
+                  / \                   
+            8                         7             
+           / \                       / \            
+       9               10              12              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      20      15   
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 6 with 15
+Tree after extraction:
+                   15                   
+                  / \                   
+            8                         7             
+           / \                       / \            
+       9               10              12              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      20      6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 8
+Compare parent 8 with RIGHT child 7
+Swap nodes 15 and 7
+Tree after swap:
+                   7                    
+                  / \                   
+            8                         15            
+           / \                       / \            
+       9               10              12              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      20      6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 12
+Compare parent 12 with RIGHT child 14
+Swap nodes 15 and 12
+Tree after swap:
+                   7                    
+                  / \                   
+            8                         12            
+           / \                       / \            
+       9               10              15              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      13      20      6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 19
+Compare parent 15 with RIGHT child 13
+Swap nodes 15 and 13
+Tree after swap:
+                   7                    
+                  / \                   
+            8                         12            
+           / \                       / \            
+       9               10              13              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      15      20      6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 7 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            8                         12            
+           / \                       / \            
+       9               10              13              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      15      7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 8
+Compare parent 8 with RIGHT child 12
+Swap nodes 20 and 8
+Tree after swap:
+                   8                    
+                  / \                   
+            20                        12            
+           / \                       / \            
+       9               10              13              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      15      7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 9
+Compare parent 9 with RIGHT child 10
+Swap nodes 20 and 9
+Tree after swap:
+                   8                    
+                  / \                   
+            9                         12            
+           / \                       / \            
+       20              10              13              14       
+      / \             / \             / \             / \       
+   16      17      18      11      19      15      7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 16
+Compare parent 16 with RIGHT child 17
+Swap nodes 20 and 16
+Tree after swap:
+                   8                    
+                  / \                   
+            9                         12            
+           / \                       / \            
+       16              10              13              14       
+      / \             / \             / \             / \       
+   20      17      18      11      19      15      7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 8 with 15
+Tree after extraction:
+                   15                   
+                  / \                   
+            9                         12            
+           / \                       / \            
+       16              10              13              14       
+      / \             / \             / \             / \       
+   20      17      18      11      19      8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 9
+Compare parent 9 with RIGHT child 12
+Swap nodes 15 and 9
+Tree after swap:
+                   9                    
+                  / \                   
+            15                        12            
+           / \                       / \            
+       16              10              13              14       
+      / \             / \             / \             / \       
+   20      17      18      11      19      8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 16
+Compare parent 15 with RIGHT child 10
+Swap nodes 15 and 10
+Tree after swap:
+                   9                    
+                  / \                   
+            10                        12            
+           / \                       / \            
+       16              15              13              14       
+      / \             / \             / \             / \       
+   20      17      18      11      19      8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 15 with LEFT child 18
+Compare parent 15 with RIGHT child 11
+Swap nodes 15 and 11
+Tree after swap:
+                   9                    
+                  / \                   
+            10                        12            
+           / \                       / \            
+       16              11              13              14       
+      / \             / \             / \             / \       
+   20      17      18      15      19      8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 9 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            10                        12            
+           / \                       / \            
+       16              11              13              14       
+      / \             / \             / \             / \       
+   20      17      18      15      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 10
+Compare parent 10 with RIGHT child 12
+Swap nodes 19 and 10
+Tree after swap:
+                   10                   
+                  / \                   
+            19                        12            
+           / \                       / \            
+       16              11              13              14       
+      / \             / \             / \             / \       
+   20      17      18      15      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 16
+Compare parent 16 with RIGHT child 11
+Swap nodes 19 and 11
+Tree after swap:
+                   10                   
+                  / \                   
+            11                        12            
+           / \                       / \            
+       16              19              13              14       
+      / \             / \             / \             / \       
+   20      17      18      15      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 18
+Compare parent 18 with RIGHT child 15
+Swap nodes 19 and 15
+Tree after swap:
+                   10                   
+                  / \                   
+            11                        12            
+           / \                       / \            
+       16              15              13              14       
+      / \             / \             / \             / \       
+   20      17      18      19      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 10 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            11                        12            
+           / \                       / \            
+       16              15              13              14       
+      / \             / \             / \             / \       
+   20      17      18      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 11
+Compare parent 11 with RIGHT child 12
+Swap nodes 19 and 11
+Tree after swap:
+                   11                   
+                  / \                   
+            19                        12            
+           / \                       / \            
+       16              15              13              14       
+      / \             / \             / \             / \       
+   20      17      18      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 16
+Compare parent 16 with RIGHT child 15
+Swap nodes 19 and 15
+Tree after swap:
+                   11                   
+                  / \                   
+            15                        12            
+           / \                       / \            
+       16              19              13              14       
+      / \             / \             / \             / \       
+   20      17      18      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 18
+Swap nodes 19 and 18
+Tree after swap:
+                   11                   
+                  / \                   
+            15                        12            
+           / \                       / \            
+       16              18              13              14       
+      / \             / \             / \             / \       
+   20      17      19      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 11 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            15                        12            
+           / \                       / \            
+       16              18              13              14       
+      / \             / \             / \             / \       
+   20      17      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 15
+Compare parent 15 with RIGHT child 12
+Swap nodes 19 and 12
+Tree after swap:
+                   12                   
+                  / \                   
+            15                        19            
+           / \                       / \            
+       16              18              13              14       
+      / \             / \             / \             / \       
+   20      17      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 13
+Compare parent 13 with RIGHT child 14
+Swap nodes 19 and 13
+Tree after swap:
+                   12                   
+                  / \                   
+            15                        13            
+           / \                       / \            
+       16              18              19              14       
+      / \             / \             / \             / \       
+   20      17      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 12 with 17
+Tree after extraction:
+                   17                   
+                  / \                   
+            15                        13            
+           / \                       / \            
+       16              18              19              14       
+      / \             / \             / \             / \       
+   20      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 17 with LEFT child 15
+Compare parent 15 with RIGHT child 13
+Swap nodes 17 and 13
+Tree after swap:
+                   13                   
+                  / \                   
+            15                        17            
+           / \                       / \            
+       16              18              19              14       
+      / \             / \             / \             / \       
+   20      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 17 with LEFT child 19
+Compare parent 17 with RIGHT child 14
+Swap nodes 17 and 14
+Tree after swap:
+                   13                   
+                  / \                   
+            15                        14            
+           / \                       / \            
+       16              18              19              17       
+      / \             / \             / \             / \       
+   20      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 13 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            15                        14            
+           / \                       / \            
+       16              18              19              17       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 15
+Compare parent 15 with RIGHT child 14
+Swap nodes 20 and 14
+Tree after swap:
+                   14                   
+                  / \                   
+            15                        20            
+           / \                       / \            
+       16              18              19              17       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 19
+Compare parent 19 with RIGHT child 17
+Swap nodes 20 and 17
+Tree after swap:
+                   14                   
+                  / \                   
+            15                        17            
+           / \                       / \            
+       16              18              19              20       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 14 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            15                        17            
+           / \                       / \            
+       16              18              19              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 15
+Compare parent 15 with RIGHT child 17
+Swap nodes 20 and 15
+Tree after swap:
+                   15                   
+                  / \                   
+            20                        17            
+           / \                       / \            
+       16              18              19              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 16
+Compare parent 16 with RIGHT child 18
+Swap nodes 20 and 16
+Tree after swap:
+                   15                   
+                  / \                   
+            16                        17            
+           / \                       / \            
+       20              18              19              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 15 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            16                        17            
+           / \                       / \            
+       20              18              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 16
+Compare parent 16 with RIGHT child 17
+Swap nodes 19 and 16
+Tree after swap:
+                   16                   
+                  / \                   
+            19                        17            
+           / \                       / \            
+       20              18              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 20
+Compare parent 19 with RIGHT child 18
+Swap nodes 19 and 18
+Tree after swap:
+                   16                   
+                  / \                   
+            18                        17            
+           / \                       / \            
+       20              19              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 16 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            18                        17            
+           / \                       / \            
+       20              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 18
+Compare parent 18 with RIGHT child 17
+Swap nodes 19 and 17
+Tree after swap:
+                   17                   
+                  / \                   
+            18                        19            
+           / \                       / \            
+       20              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 17 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            18                        19            
+           / \                       / \            
+       17              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 20 with LEFT child 18
+Compare parent 18 with RIGHT child 19
+Swap nodes 20 and 18
+Tree after swap:
+                   18                   
+                  / \                   
+            20                        19            
+           / \                       / \            
+       17              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Extract max: swap 18 with 19
+Tree after extraction:
+                   19                   
+                  / \                   
+            20                        18            
+           / \                       / \            
+       17              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+Compare parent 19 with LEFT child 20
+Extract max: swap 19 with 20
+Tree after extraction:
+                   20                   
+                  / \                   
+            19                        18            
+           / \                       / \            
+       17              16              15              14       
+      / \             / \             / \             / \       
+   13      12      11      10      9       8       7       6    
+  / \     / \     / \     / \     / \     / \     / \     / \   
+      5            4            3            2            1      
+
+--- COMPLETED ---
+Final result: [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]

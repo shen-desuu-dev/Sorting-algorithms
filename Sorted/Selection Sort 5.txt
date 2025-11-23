@@ -1,0 +1,198 @@
+--- SELECTION SORT START ---
+Initial array:
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 1      | Initial |
+| 1       | 2      | Initial |
+| 2       | 9      | Initial |
+| 3       | 10     | Initial |
+| 4       | 11     | Initial |
+| 5       | 3      | Initial |
+| 6       | 4      | Initial |
+| 7       | 6      | Initial |
+| 8       | 5      | Initial |
+| 9       | 7      | Initial |
+| 10      | 8      | Initial |
+
+Compare 2 vs 1
+Compare 9 vs 1
+Compare 10 vs 1
+Compare 11 vs 1
+Compare 3 vs 1
+Compare 4 vs 1
+Compare 6 vs 1
+Compare 5 vs 1
+Compare 7 vs 1
+Compare 8 vs 1
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 0 and 4 |
+| 1       | 2      | Swapped positions 0 and 4 |
+| 2       | 9      | Swapped positions 0 and 4 |
+| 3       | 10     | Swapped positions 0 and 4 |
+| 4       | 1      | Swapped positions 0 and 4 |
+| 5       | 3      | Swapped positions 0 and 4 |
+| 6       | 4      | Swapped positions 0 and 4 |
+| 7       | 6      | Swapped positions 0 and 4 |
+| 8       | 5      | Swapped positions 0 and 4 |
+| 9       | 7      | Swapped positions 0 and 4 |
+| 10      | 8      | Swapped positions 0 and 4 |
+
+Compare 9 vs 2
+Compare 10 vs 2
+Compare 1 vs 2
+Compare 3 vs 2
+Compare 4 vs 2
+Compare 6 vs 2
+Compare 5 vs 2
+Compare 7 vs 2
+Compare 8 vs 2
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 1 and 3 |
+| 1       | 10     | Swapped positions 1 and 3 |
+| 2       | 9      | Swapped positions 1 and 3 |
+| 3       | 2      | Swapped positions 1 and 3 |
+| 4       | 1      | Swapped positions 1 and 3 |
+| 5       | 3      | Swapped positions 1 and 3 |
+| 6       | 4      | Swapped positions 1 and 3 |
+| 7       | 6      | Swapped positions 1 and 3 |
+| 8       | 5      | Swapped positions 1 and 3 |
+| 9       | 7      | Swapped positions 1 and 3 |
+| 10      | 8      | Swapped positions 1 and 3 |
+
+Compare 2 vs 9
+Compare 1 vs 9
+Compare 3 vs 9
+Compare 4 vs 9
+Compare 6 vs 9
+Compare 5 vs 9
+Compare 7 vs 9
+Compare 8 vs 9
+Compare 1 vs 2
+Compare 3 vs 2
+Compare 4 vs 2
+Compare 6 vs 2
+Compare 5 vs 2
+Compare 7 vs 2
+Compare 8 vs 2
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 3 and 10 |
+| 1       | 10     | Swapped positions 3 and 10 |
+| 2       | 9      | Swapped positions 3 and 10 |
+| 3       | 8      | Swapped positions 3 and 10 |
+| 4       | 1      | Swapped positions 3 and 10 |
+| 5       | 3      | Swapped positions 3 and 10 |
+| 6       | 4      | Swapped positions 3 and 10 |
+| 7       | 6      | Swapped positions 3 and 10 |
+| 8       | 5      | Swapped positions 3 and 10 |
+| 9       | 7      | Swapped positions 3 and 10 |
+| 10      | 2      | Swapped positions 3 and 10 |
+
+Compare 3 vs 1
+Compare 4 vs 1
+Compare 6 vs 1
+Compare 5 vs 1
+Compare 7 vs 1
+Compare 2 vs 1
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 4 and 9 |
+| 1       | 10     | Swapped positions 4 and 9 |
+| 2       | 9      | Swapped positions 4 and 9 |
+| 3       | 8      | Swapped positions 4 and 9 |
+| 4       | 7      | Swapped positions 4 and 9 |
+| 5       | 3      | Swapped positions 4 and 9 |
+| 6       | 4      | Swapped positions 4 and 9 |
+| 7       | 6      | Swapped positions 4 and 9 |
+| 8       | 5      | Swapped positions 4 and 9 |
+| 9       | 1      | Swapped positions 4 and 9 |
+| 10      | 2      | Swapped positions 4 and 9 |
+
+Compare 4 vs 3
+Compare 6 vs 3
+Compare 5 vs 3
+Compare 1 vs 3
+Compare 2 vs 3
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 5 and 7 |
+| 1       | 10     | Swapped positions 5 and 7 |
+| 2       | 9      | Swapped positions 5 and 7 |
+| 3       | 8      | Swapped positions 5 and 7 |
+| 4       | 7      | Swapped positions 5 and 7 |
+| 5       | 6      | Swapped positions 5 and 7 |
+| 6       | 4      | Swapped positions 5 and 7 |
+| 7       | 3      | Swapped positions 5 and 7 |
+| 8       | 5      | Swapped positions 5 and 7 |
+| 9       | 1      | Swapped positions 5 and 7 |
+| 10      | 2      | Swapped positions 5 and 7 |
+
+Compare 3 vs 4
+Compare 5 vs 4
+Compare 1 vs 4
+Compare 2 vs 4
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 6 and 8 |
+| 1       | 10     | Swapped positions 6 and 8 |
+| 2       | 9      | Swapped positions 6 and 8 |
+| 3       | 8      | Swapped positions 6 and 8 |
+| 4       | 7      | Swapped positions 6 and 8 |
+| 5       | 6      | Swapped positions 6 and 8 |
+| 6       | 5      | Swapped positions 6 and 8 |
+| 7       | 3      | Swapped positions 6 and 8 |
+| 8       | 4      | Swapped positions 6 and 8 |
+| 9       | 1      | Swapped positions 6 and 8 |
+| 10      | 2      | Swapped positions 6 and 8 |
+
+Compare 4 vs 3
+Compare 1 vs 3
+Compare 2 vs 3
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 7 and 8 |
+| 1       | 10     | Swapped positions 7 and 8 |
+| 2       | 9      | Swapped positions 7 and 8 |
+| 3       | 8      | Swapped positions 7 and 8 |
+| 4       | 7      | Swapped positions 7 and 8 |
+| 5       | 6      | Swapped positions 7 and 8 |
+| 6       | 5      | Swapped positions 7 and 8 |
+| 7       | 4      | Swapped positions 7 and 8 |
+| 8       | 3      | Swapped positions 7 and 8 |
+| 9       | 1      | Swapped positions 7 and 8 |
+| 10      | 2      | Swapped positions 7 and 8 |
+
+Compare 1 vs 3
+Compare 2 vs 3
+Compare 2 vs 1
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Swapped positions 9 and 10 |
+| 1       | 10     | Swapped positions 9 and 10 |
+| 2       | 9      | Swapped positions 9 and 10 |
+| 3       | 8      | Swapped positions 9 and 10 |
+| 4       | 7      | Swapped positions 9 and 10 |
+| 5       | 6      | Swapped positions 9 and 10 |
+| 6       | 5      | Swapped positions 9 and 10 |
+| 7       | 4      | Swapped positions 9 and 10 |
+| 8       | 3      | Swapped positions 9 and 10 |
+| 9       | 2      | Swapped positions 9 and 10 |
+| 10      | 1      | Swapped positions 9 and 10 |
+
+--- COMPLETED ---
+Final:
+| Position | Value | Explanation |
+|---------|--------|-------------|
+| 0       | 11     | Final state |
+| 1       | 10     | Final state |
+| 2       | 9      | Final state |
+| 3       | 8      | Final state |
+| 4       | 7      | Final state |
+| 5       | 6      | Final state |
+| 6       | 5      | Final state |
+| 7       | 4      | Final state |
+| 8       | 3      | Final state |
+| 9       | 2      | Final state |
+| 10      | 1      | Final state |

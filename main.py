@@ -1,209 +1,212 @@
 import os
+import math
 
-# ------------------ Utilities ------------------
+def log_and_print(log_list, message):
+    log_list.append(message)
+    print(message)
 
-def ensure_sorted_folder():
-    folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Sorted")
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-    return folder
+def table_array(arr, explanation):
+    rows = []
+    rows.append("| Position | Value | Explanation |")
+    rows.append("|---------|--------|-------------|")
+    for i, v in enumerate(arr):
+        rows.append(f"| {i:<7} | {str(v):<6} | {explanation} |")
+    return "\n".join(rows) + "\n"
 
-def get_incremented_filename(folder, algorithm):
-    count = 1
-    while True:
-        filename = os.path.join(folder, f"{algorithm} {count}.txt")
-        if not os.path.exists(filename):
-            return filename
-        count += 1
+def table_tree(arr):
+    if not arr:
+        return "Tree is empty.\n"
+    n = len(arr)
+    display = [("[ ]" if v is None else str(v)) for v in arr]
+    depth = math.floor(math.log2(n)) + 1
+    out = []
+    out.append("### Tree Structure (Markdown Table)\n")
+    out.append("| Level | Nodes | Explanation |")
+    out.append("|-------|--------|-------------|")
+    index = 0
+    for level in range(depth):
+        level_count = 2 ** level
+        row = display[index:index + level_count]
+        index += level_count
+        explanation = "Root level." if level == 0 else "Children of previous level. Missing children shown as [ ]."
+        out.append(f"| {level} | {', '.join(row)} | {explanation} |")
+    return "\n".join(out) + "\n"
 
 def parse_input(raw):
     if all(x.lstrip("-").isdigit() for x in raw):
         return [int(x) for x in raw]
-    return [x.upper() for x in raw]
+    return [s.upper() for s in raw]
 
 def write_log(algorithm, log):
-    folder = ensure_sorted_folder()
-    filename = get_incremented_filename(folder, algorithm)
-    with open(filename, "w") as f:
-        f.write("\n".join(log))
-    return filename
-
-# ------------------ Selection Sort ------------------
+    folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Sorted")
+    os.makedirs(folder, exist_ok=True)
+    count = 1
+    while True:
+        file = os.path.join(folder, f"{algorithm} {count}.txt")
+        if not os.path.exists(file):
+            with open(file, "w") as f:
+                f.write("\n".join(log))
+            return file
+        count += 1
 
 class SelectionSorter:
-    def __init__(self, items, ascending=True):
+    def __init__(self, items, asc=True):
         self.items = items
-        self.asc = ascending
+        self.asc = asc
         self.log = []
-
     def compare(self, a, b):
         return a < b if self.asc else a > b
-
     def sort(self):
         arr = self.items
-        self.log.append(f"Start: {arr}")
-        n = len(arr)
+        log_and_print(self.log, f"--- SELECTION SORT START ---\nInitial array:\n{table_array(arr,'Initial')}")
 
+        n = len(arr)
         for i in range(n):
             best = i
-            for j in range(i + 1, n):
+            for j in range(i+1, n):
+                log_and_print(self.log, f"Compare {arr[j]} and {arr[best]}")
+            for j in range(i+1, n):
                 if self.compare(arr[j], arr[best]):
                     best = j
             if best != i:
-                self.log.append(f"Swap {arr[i]} and {arr[best]}")
                 arr[i], arr[best] = arr[best], arr[i]
-                self.log.append(f"Array: {arr}")
-
-        self.log.append(f"Finished: {arr}")
+                log_and_print(self.log, table_array(arr, f"Swapped positions {i} and {best}"))
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(arr,'Final state')}")
         return arr
 
-# ------------------ Heap Sort ------------------
-
 class HeapSorter:
-    def __init__(self, items, ascending=True):
+    def __init__(self, items, asc=True):
         self.items = items
-        self.asc = ascending
+        self.asc = asc
         self.log = []
-
     def compare(self, a, b):
         return a > b if self.asc else a < b
-
     def heapify(self, arr, n, i):
+        left = 2*i + 1
+        right = 2*i + 2
         largest = i
-        L = 2 * i + 1
-        R = 2 * i + 2
 
-        if L < n and self.compare(arr[L], arr[largest]):
-            largest = L
-        if R < n and self.compare(arr[R], arr[largest]):
-            largest = R
+        if left < n:
+            log_and_print(self.log, f"Compare {arr[largest]} with {arr[left]}")
+            if self.compare(arr[left], arr[largest]):
+                largest = left
+        if right < n:
+            log_and_print(self.log, f"Compare {arr[largest]} with {arr[right]}")
+            if self.compare(arr[right], arr[largest]):
+                largest = right
 
         if largest != i:
-            self.log.append(f"Swap {arr[i]} and {arr[largest]}")
             arr[i], arr[largest] = arr[largest], arr[i]
-            self.log.append(f"Array: {arr}")
+            log_and_print(self.log, table_array(arr, f"Swap {i} <-> {largest}"))
+            log_and_print(self.log, table_tree(arr))
             self.heapify(arr, n, largest)
 
     def sort(self):
         arr = self.items
         n = len(arr)
-        self.log.append(f"Start: {arr}")
 
-        for i in range(n // 2 - 1, -1, -1):
+        log_and_print(self.log, f"--- HEAP SORT START ---\nInitial:\n{table_array(arr,'Initial')}")
+
+        for i in range(n//2 - 1, -1, -1):
             self.heapify(arr, n, i)
 
-        for i in range(n - 1, 0, -1):
-            self.log.append(f"Swap {arr[0]} and {arr[i]}")
+        for i in range(n-1, 0, -1):
             arr[i], arr[0] = arr[0], arr[i]
-            self.log.append(f"Array: {arr}")
+            log_and_print(self.log, table_array(arr, f"Extract root to position {i}"))
+            log_and_print(self.log, table_tree(arr))
             self.heapify(arr, i, 0)
 
-        self.log.append(f"Finished: {arr}")
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(arr,'Final state')}")
         return arr
 
-# ------------------ Insertion Sort ------------------
-
 class InsertionSorter:
-    def __init__(self, items, ascending=True):
+    def __init__(self, items, asc=True):
         self.items = items
-        self.asc = ascending
+        self.asc = asc
         self.log = []
-
     def compare(self, a, b):
         return a < b if self.asc else a > b
-
     def sort(self):
         arr = self.items
-        self.log.append(f"Start: {arr}")
+        log_and_print(self.log, f"--- INSERTION SORT START ---\nInitial:\n{table_array(arr,'Initial')}")
 
         for i in range(1, len(arr)):
             key = arr[i]
             j = i - 1
             while j >= 0 and self.compare(key, arr[j]):
-                arr[j + 1] = arr[j]
+                arr[j+1] = arr[j]
                 j -= 1
-            arr[j + 1] = key
-            self.log.append(f"Insert {key}: {arr}")
+            arr[j+1] = key
+            log_and_print(self.log, table_array(arr, f"Inserted {key} at {j+1}"))
 
-        self.log.append(f"Finished: {arr}")
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(arr,'Final state')}")
         return arr
 
-# ------------------ Merge Sort ------------------
-
 class MergeSorter:
-    def __init__(self, items, ascending=True):
+    def __init__(self, items, asc=True):
         self.items = items
-        self.asc = ascending
+        self.asc = asc
         self.log = []
-
     def compare(self, a, b):
         return a <= b if self.asc else a >= b
-
     def merge_sort(self, arr):
         if len(arr) <= 1:
             return arr
 
-        mid = len(arr) // 2
-        L = self.merge_sort(arr[:mid])
-        R = self.merge_sort(arr[mid:])
+        mid = len(arr)//2
+        left = self.merge_sort(arr[:mid])
+        right = self.merge_sort(arr[mid:])
 
         merged = []
         i = j = 0
 
-        while i < len(L) and j < len(R):
-            if self.compare(L[i], R[j]):
-                merged.append(L[i])
-                i += 1
+        while i < len(left) and j < len(right):
+            if self.compare(left[i], right[j]):
+                merged.append(left[i]); i += 1
             else:
-                merged.append(R[j])
-                j += 1
+                merged.append(right[j]); j += 1
 
-        merged.extend(L[i:])
-        merged.extend(R[j:])
-        self.log.append(f"Merge: {merged}")
+        merged.extend(left[i:])
+        merged.extend(right[j:])
+
+        log_and_print(self.log, table_array(merged, "After merge"))
+        log_and_print(self.log, table_tree(merged))
         return merged
-
     def sort(self):
-        self.log.append(f"Start: {self.items}")
-        sorted_arr = self.merge_sort(self.items)
-        self.log.append(f"Finished: {sorted_arr}")
-        return sorted_arr
-
-# ------------------ Quick Sort ------------------
+        log_and_print(self.log, f"--- MERGE SORT START ---\nInitial:\n{table_array(self.items,'Initial')}")
+        result = self.merge_sort(self.items)
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(result,'Final state')}")
+        return result
 
 class QuickSorter:
-    def __init__(self, items, ascending=True):
+    def __init__(self, items, asc=True):
         self.items = items
-        self.asc = ascending
+        self.asc = asc
         self.log = []
-
     def compare(self, a, b):
         return a <= b if self.asc else a >= b
-
-    def quick_sort(self, arr):
+    def quick(self, arr):
         if len(arr) <= 1:
             return arr
-
-        pivot = arr[len(arr) // 2]
+        pivot = arr[len(arr)//2]
         left = [x for x in arr if self.compare(x, pivot) and x != pivot]
-        middle = [x for x in arr if x == pivot]
+        mid = [x for x in arr if x == pivot]
         right = [x for x in arr if not self.compare(x, pivot)]
 
-        self.log.append(f"Pivot {pivot}: L={left} M={middle} R={right}")
+        combined = left + mid + right
+        log_and_print(self.log, table_array(combined, f"Pivot {pivot}"))
+        log_and_print(self.log, table_tree(combined))
 
-        return self.quick_sort(left) + middle + self.quick_sort(right)
-
+        return self.quick(left) + mid + self.quick(right)
     def sort(self):
-        self.log.append(f"Start: {self.items}")
-        sorted_arr = self.quick_sort(self.items)
-        self.log.append(f"Finished: {sorted_arr}")
-        return sorted_arr
+        log_and_print(self.log, f"--- QUICK SORT START ---\nInitial:\n{table_array(self.items,'Initial')}")
+        result = self.quick(self.items)
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(result,'Final state')}")
+        return result
 
-# ------------------ Binary Tree Sort ------------------
-
-class TreeNode:
-    def __init__(self, value):
-        self.value = value
+class Node:
+    def __init__(self, v):
+        self.v = v
         self.left = None
         self.right = None
 
@@ -211,75 +214,86 @@ class TreeSorter:
     def __init__(self, items):
         self.items = items
         self.log = []
-
-    def insert(self, root, value):
-        if root is None:
-            self.log.append(f"Insert {value}")
-            return TreeNode(value)
-        if value < root.value:
-            root.left = self.insert(root.left, value)
+    def insert(self, root, v):
+        if not root:
+            return Node(v)
+        if v < root.v:
+            root.left = self.insert(root.left, v)
         else:
-            root.right = self.insert(root.right, value)
+            root.right = self.insert(root.right, v)
         return root
-
-    def inorder(self, root, result):
-        if root:
-            self.inorder(root.left, result)
-            result.append(root.value)
-            self.inorder(root.right, result)
-
+    def inorder(self, r, out):
+        if r:
+            self.inorder(r.left, out)
+            out.append(r.v)
+            self.inorder(r.right, out)
+    def to_list(self, root):
+        q = [root]
+        arr = []
+        while q:
+            n = q.pop(0)
+            if n:
+                arr.append(n.v)
+                q.append(n.left)
+                q.append(n.right)
+            else:
+                arr.append(None)
+        return arr
     def sort(self):
         root = None
-        for val in self.items:
-            root = self.insert(root, val)
-
+        for v in self.items:
+            root = self.insert(root, v)
+            arr = self.to_list(root)
+            log_and_print(self.log, table_array(arr, f"Inserted {v}"))
+            log_and_print(self.log, table_tree(arr))
         result = []
         self.inorder(root, result)
-        self.log.append(f"Finished: {result}")
+        log_and_print(self.log, f"--- COMPLETED ---\nFinal:\n{table_array(result,'Final state')}")
         return result
 
-# ------------------ Main Program ------------------
-
 def main():
-    print("\nChoose sorting algorithm:")
-    print("1) Selection Sort")
-    print("2) Heap Sort")
-    print("3) Insertion Sort")
-    print("4) Merge Sort")
-    print("5) Quick Sort")
-    print("6) Binary Tree Sort")
+    while True:
+        print("\nSORTING ALGORITHMS")
+        print("1) Selection Sort")
+        print("2) Heap Sort")
+        print("3) Insertion Sort")
+        print("4) Merge Sort")
+        print("5) Quick Sort")
+        print("6) Binary Tree Sort")
+        print("again) Run again")
+        print("exit) Quit")
 
-    choice = input("Your choice: ")
+        choice = input("Choose algorithm: ").strip().lower()
+        if choice == "exit":
+            print("Goodbye.")
+            return
+        if choice == "again":
+            continue
+        if choice not in {"1","2","3","4","5","6"}:
+            print("Invalid choice.")
+            continue
 
-    raw = input("Enter items separated by spaces: ").split()
-    data = parse_input(raw)
+        raw = input("Enter values separated by spaces: ").split()
+        data = parse_input(raw)
 
-    if choice != "6":
-        asc = input("Sort ascending? (y/n): ").lower().startswith("y")
-    else:
         asc = True
+        if choice != "6":
+            asc = input("Ascending? (y/n): ").lower().startswith("y")
 
-    algorithms = {
-        "1": ("Selection Sort", SelectionSorter(data, asc)),
-        "2": ("Heap Sort", HeapSorter(data, asc)),
-        "3": ("Insertion Sort", InsertionSorter(data, asc)),
-        "4": ("Merge Sort", MergeSorter(data, asc)),
-        "5": ("Quick Sort", QuickSorter(data, asc)),
-        "6": ("Binary Tree Sort", TreeSorter(data))
-    }
+        alg = {
+            "1": ("Selection Sort", SelectionSorter(data, asc)),
+            "2": ("Heap Sort", HeapSorter(data, asc)),
+            "3": ("Insertion Sort", InsertionSorter(data, asc)),
+            "4": ("Merge Sort", MergeSorter(data, asc)),
+            "5": ("Quick Sort", QuickSorter(data, asc)),
+            "6": ("Binary Tree Sort", TreeSorter(data)),
+        }
 
-    if choice not in algorithms:
-        print("Invalid choice.")
-        return
-
-    name, sorter = algorithms[choice]
-
-    result = sorter.sort()
-    filename = write_log(name, sorter.log)
-
-    print("\nSorted:", result)
-    print(f"Steps saved to: {filename}")
+        name, sorter = alg[choice]
+        sorter.sort()
+        saved = write_log(name, sorter.log)
+        print("\nSaved to:", saved)
+        print("\nType 'again' to sort another list, or 'exit' to quit.")
 
 if __name__ == "__main__":
     main()
-

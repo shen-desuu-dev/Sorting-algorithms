@@ -1,0 +1,58 @@
+--- MERGE SORT START ---
+Initial: ['A', 'L', 'G', 'O', 'R', 'I', 'T', 'H', 'M', 'S']
+
+Merging ['A'] + ['L'] = ['A', 'L']
+              A               
+             / \              
+              L               
+
+Merging ['O'] + ['R'] = ['O', 'R']
+              O               
+             / \              
+              R               
+
+Merging ['G'] + ['O', 'R'] = ['G', 'O', 'R']
+              G               
+             / \              
+         O                   R          
+
+Merging ['A', 'L'] + ['G', 'O', 'R'] = ['A', 'G', 'L', 'O', 'R']
+              A               
+             / \              
+         G                   L          
+        / \                 / \         
+         O                   R          
+
+Merging ['I'] + ['T'] = ['I', 'T']
+              I               
+             / \              
+              T               
+
+Merging ['M'] + ['S'] = ['M', 'S']
+              M               
+             / \              
+              S               
+
+Merging ['H'] + ['M', 'S'] = ['H', 'M', 'S']
+              H               
+             / \              
+         M                   S          
+
+Merging ['I', 'T'] + ['H', 'M', 'S'] = ['H', 'I', 'M', 'S', 'T']
+              H               
+             / \              
+         I                   M          
+        / \                 / \         
+         S                   T          
+
+Merging ['A', 'G', 'L', 'O', 'R'] + ['H', 'I', 'M', 'S', 'T'] = ['A', 'G', 'H', 'I', 'L', 'M', 'O', 'R', 'S', 'T']
+              A               
+             / \              
+         G                   H          
+        / \                 / \         
+     I           L           M           O      
+    / \         / \         / \         / \     
+       R              S              T       
+
+--- COMPLETED ---
+Final: ['A', 'G', 'H', 'I', 'L', 'M', 'O', 'R', 'S', 'T']

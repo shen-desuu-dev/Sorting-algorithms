@@ -1,0 +1,59 @@
+--- SELECTION SORT START ---
+Initial: [1, 2, 3, 4, 6, 5, 9, 8, 7, 10]
+
+Compare: 2 vs 1
+Compare: 3 vs 1
+Compare: 4 vs 1
+Compare: 6 vs 1
+Compare: 5 vs 1
+Compare: 9 vs 1
+Compare: 8 vs 1
+Compare: 7 vs 1
+Compare: 10 vs 1
+Compare: 3 vs 2
+Compare: 4 vs 2
+Compare: 6 vs 2
+Compare: 5 vs 2
+Compare: 9 vs 2
+Compare: 8 vs 2
+Compare: 7 vs 2
+Compare: 10 vs 2
+Compare: 4 vs 3
+Compare: 6 vs 3
+Compare: 5 vs 3
+Compare: 9 vs 3
+Compare: 8 vs 3
+Compare: 7 vs 3
+Compare: 10 vs 3
+Compare: 6 vs 4
+Compare: 5 vs 4
+Compare: 9 vs 4
+Compare: 8 vs 4
+Compare: 7 vs 4
+Compare: 10 vs 4
+Compare: 5 vs 6
+New best: 5
+Compare: 9 vs 5
+Compare: 8 vs 5
+Compare: 7 vs 5
+Compare: 10 vs 5
+Swap 6 <-> 5
+[1, 2, 3, 4, 5, 6, 9, 8, 7, 10]
+
+Compare: 9 vs 6
+Compare: 8 vs 6
+Compare: 7 vs 6
+Compare: 10 vs 6
+Compare: 8 vs 9
+New best: 8
+Compare: 7 vs 8
+New best: 7
+Compare: 10 vs 7
+Swap 9 <-> 7
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Compare: 9 vs 8
+Compare: 10 vs 8
+Compare: 10 vs 9
+--- COMPLETED ---
+Final: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

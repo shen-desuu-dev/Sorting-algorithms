@@ -1,0 +1,38 @@
+--- SELECTION SORT START ---
+Initial: [1, 2, 3, 4, 5, 6]
+
+Compare: 2 vs 1
+New best: 2
+Compare: 3 vs 2
+New best: 3
+Compare: 4 vs 3
+New best: 4
+Compare: 5 vs 4
+New best: 5
+Compare: 6 vs 5
+New best: 6
+Swap 1 <-> 6
+[6, 2, 3, 4, 5, 1]
+
+Compare: 3 vs 2
+New best: 3
+Compare: 4 vs 3
+New best: 4
+Compare: 5 vs 4
+New best: 5
+Compare: 1 vs 5
+Swap 2 <-> 5
+[6, 5, 3, 4, 2, 1]
+
+Compare: 4 vs 3
+New best: 4
+Compare: 2 vs 4
+Compare: 1 vs 4
+Swap 3 <-> 4
+[6, 5, 4, 3, 2, 1]
+
+Compare: 2 vs 3
+Compare: 1 vs 3
+Compare: 1 vs 2
+--- COMPLETED ---
+Final: [6, 5, 4, 3, 2, 1]

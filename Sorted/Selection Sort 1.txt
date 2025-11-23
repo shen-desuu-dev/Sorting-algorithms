@@ -1,10 +1,73 @@
-Start: ['N', 'I', 'G', 'G', 'E', 'R']
-Swap N and R
-Array: ['R', 'I', 'G', 'G', 'E', 'N']
-Swap I and N
-Array: ['R', 'N', 'G', 'G', 'E', 'I']
-Swap G and I
-Array: ['R', 'N', 'I', 'G', 'E', 'G']
-Swap E and G
-Array: ['R', 'N', 'I', 'G', 'G', 'E']
-Finished: ['R', 'N', 'I', 'G', 'G', 'E']
+Start: ['A', 'L', 'G', 'O', 'R', 'I', 'T', 'H', 'M', 'S']
+Comparing L with current best A
+New best found: L
+Comparing G with current best L
+Comparing O with current best L
+New best found: O
+Comparing R with current best O
+New best found: R
+Comparing I with current best R
+Comparing T with current best R
+New best found: T
+Comparing H with current best T
+Comparing M with current best T
+Comparing S with current best T
+Swapping A with T
+Array after swap: ['T', 'L', 'G', 'O', 'R', 'I', 'A', 'H', 'M', 'S']
+Comparing G with current best L
+Comparing O with current best L
+New best found: O
+Comparing R with current best O
+New best found: R
+Comparing I with current best R
+Comparing A with current best R
+Comparing H with current best R
+Comparing M with current best R
+Comparing S with current best R
+New best found: S
+Swapping L with S
+Array after swap: ['T', 'S', 'G', 'O', 'R', 'I', 'A', 'H', 'M', 'L']
+Comparing O with current best G
+New best found: O
+Comparing R with current best O
+New best found: R
+Comparing I with current best R
+Comparing A with current best R
+Comparing H with current best R
+Comparing M with current best R
+Comparing L with current best R
+Swapping G with R
+Array after swap: ['T', 'S', 'R', 'O', 'G', 'I', 'A', 'H', 'M', 'L']
+Comparing G with current best O
+Comparing I with current best O
+Comparing A with current best O
+Comparing H with current best O
+Comparing M with current best O
+Comparing L with current best O
+Comparing I with current best G
+New best found: I
+Comparing A with current best I
+Comparing H with current best I
+Comparing M with current best I
+New best found: M
+Comparing L with current best M
+Swapping G with M
+Array after swap: ['T', 'S', 'R', 'O', 'M', 'I', 'A', 'H', 'G', 'L']
+Comparing A with current best I
+Comparing H with current best I
+Comparing G with current best I
+Comparing L with current best I
+New best found: L
+Swapping I with L
+Array after swap: ['T', 'S', 'R', 'O', 'M', 'L', 'A', 'H', 'G', 'I']
+Comparing H with current best A
+New best found: H
+Comparing G with current best H
+Comparing I with current best H
+New best found: I
+Swapping A with I
+Array after swap: ['T', 'S', 'R', 'O', 'M', 'L', 'I', 'H', 'G', 'A']
+Comparing G with current best H
+Comparing A with current best H
+Comparing A with current best G
+Finished: ['T', 'S', 'R', 'O', 'M', 'L', 'I', 'H', 'G', 'A']

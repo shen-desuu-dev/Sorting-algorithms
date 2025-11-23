@@ -1,0 +1,116 @@
+Inserting 1 into the tree.
+Tree state:
+              1               
+
+Inserting 2 into the tree.
+Inserting 2 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+
+Inserting 3 into the tree.
+Inserting 3 into the tree.
+Inserting 3 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+        [ ]                  3          
+
+Inserting 4 into the tree.
+Inserting 4 into the tree.
+Inserting 4 into the tree.
+Inserting 4 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+
+Inserting 5 into the tree.
+Inserting 5 into the tree.
+Inserting 5 into the tree.
+Inserting 5 into the tree.
+Inserting 5 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+                / \                     / \     
+        [ ]                  5          
+
+Inserting 6 into the tree.
+Inserting 6 into the tree.
+Inserting 6 into the tree.
+Inserting 6 into the tree.
+Inserting 6 into the tree.
+Inserting 6 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+                / \                     / \     
+    [ ]          5          [ ]          6      
+
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Inserting 7 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+                / \                     / \     
+  [ ]      5      [ ]      6      [ ]      7    
+
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Inserting 8 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+                / \                     / \     
+ [ ]    5    [ ]    6    [ ]    7    [ ]    8   
+
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Inserting 9 into the tree.
+Tree state:
+              1               
+             / \              
+        [ ]                  2          
+                            / \         
+    [ ]          3          [ ]          4      
+                / \                     / \     
+ [ ]    5    [ ]    6    [ ]    7    [ ]    8   
+       / \         / \         / \         / \  
+        [ ]                  9          
+
+--- COMPLETED ---
+Final result: [1, 2, 3, 4, 5, 6, 7, 8, 9]

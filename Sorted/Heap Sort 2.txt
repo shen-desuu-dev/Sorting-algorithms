@@ -1,0 +1,205 @@
+--- HEAP SORT START ---
+Initial: [1, 2, 3, 4, 6, 5, 9, 7, 8]
+
+Compare 4 with 7
+Compare 4 with 8
+Compare 3 with 5
+Compare 3 with 9
+Compare 2 with 4
+Compare 2 with 6
+Compare 1 with 2
+Compare 1 with 3
+Extract: swap 1 <-> 8
+                     8
+                     /\
+         2                     3
+         /\                     /\
+   4         6         5         9
+   /\         /\         /\         /\
+7   1
+
+Compare 8 with 2
+Compare 2 with 3
+Swap 8 <-> 2
+                     2
+                     /\
+         8                     3
+         /\                     /\
+   4         6         5         9
+   /\         /\         /\         /\
+7   1
+
+Compare 8 with 4
+Compare 4 with 6
+Swap 8 <-> 4
+                     2
+                     /\
+         4                     3
+         /\                     /\
+   8         6         5         9
+   /\         /\         /\         /\
+7   1
+
+Compare 8 with 7
+Swap 8 <-> 7
+                     2
+                     /\
+         4                     3
+         /\                     /\
+   7         6         5         9
+   /\         /\         /\         /\
+8   1
+
+Extract: swap 2 <-> 8
+                     8
+                     /\
+         4                     3
+         /\                     /\
+   7         6         5         9
+   /\         /\         /\         /\
+2   1
+
+Compare 8 with 4
+Compare 4 with 3
+Swap 8 <-> 3
+                     3
+                     /\
+         4                     8
+         /\                     /\
+   7         6         5         9
+   /\         /\         /\         /\
+2   1
+
+Compare 8 with 5
+Compare 5 with 9
+Swap 8 <-> 5
+                     3
+                     /\
+         4                     5
+         /\                     /\
+   7         6         8         9
+   /\         /\         /\         /\
+2   1
+
+Extract: swap 3 <-> 9
+                     9
+                     /\
+         4                     5
+         /\                     /\
+   7         6         8         3
+   /\         /\         /\         /\
+2   1
+
+Compare 9 with 4
+Compare 4 with 5
+Swap 9 <-> 4
+                     4
+                     /\
+         9                     5
+         /\                     /\
+   7         6         8         3
+   /\         /\         /\         /\
+2   1
+
+Compare 9 with 7
+Compare 7 with 6
+Swap 9 <-> 6
+                     4
+                     /\
+         6                     5
+         /\                     /\
+   7         9         8         3
+   /\         /\         /\         /\
+2   1
+
+Extract: swap 4 <-> 8
+                     8
+                     /\
+         6                     5
+         /\                     /\
+   7         9         4         3
+   /\         /\         /\         /\
+2   1
+
+Compare 8 with 6
+Compare 6 with 5
+Swap 8 <-> 5
+                     5
+                     /\
+         6                     8
+         /\                     /\
+   7         9         4         3
+   /\         /\         /\         /\
+2   1
+
+Extract: swap 5 <-> 9
+                     9
+                     /\
+         6                     8
+         /\                     /\
+   7         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Compare 9 with 6
+Compare 6 with 8
+Swap 9 <-> 6
+                     6
+                     /\
+         9                     8
+         /\                     /\
+   7         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Compare 9 with 7
+Swap 9 <-> 7
+                     6
+                     /\
+         7                     8
+         /\                     /\
+   9         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Extract: swap 6 <-> 9
+                     9
+                     /\
+         7                     8
+         /\                     /\
+   6         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Compare 9 with 7
+Compare 7 with 8
+Swap 9 <-> 7
+                     7
+                     /\
+         9                     8
+         /\                     /\
+   6         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Extract: swap 7 <-> 8
+                     8
+                     /\
+         9                     7
+         /\                     /\
+   6         5         4         3
+   /\         /\         /\         /\
+2   1
+
+Compare 8 with 9
+Extract: swap 8 <-> 9
+                     9
+                     /\
+         8                     7
+         /\                     /\
+   6         5         4         3
+   /\         /\         /\         /\
+2   1
+
+--- COMPLETED ---
+Final: [9, 8, 7, 6, 5, 4, 3, 2, 1]
